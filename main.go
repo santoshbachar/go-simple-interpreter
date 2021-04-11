@@ -12,17 +12,19 @@ func main() {
 
 	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Print("Enter text: ")
-	text, _ := reader.ReadString('\n')
+	for {
+		fmt.Print("Enter text: ")
+		text, _ := reader.ReadString('\n')
 
-	fmt.Print("text = ", text)
+		fmt.Print("text = ", text)
 
-	var interpreter interpreter.Interpreter
+		var interpreter interpreter.Interpreter
 
-	interpreter.Init(text)
+		interpreter.Init(text)
 
-	result := interpreter.Expr()
+		result := interpreter.Expr()
 
-	fmt.Println("interpreter = ", interpreter)
-	fmt.Println("result = ", result)
+		fmt.Println("interpreter = ", interpreter)
+		fmt.Println("result = ", result)
+	}
 }
